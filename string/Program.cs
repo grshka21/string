@@ -25,6 +25,17 @@ namespace StringsPractice
             Console.WriteLine(report);
             reportBuilder.SaveToFile("sales_report.txt", report);
 
+            Console.WriteLine("\n=== ЗАДАНИЕ 3: ШИФР ЦЕЗАРЯ ===");
+            string secret = "Hello, World! C# 2026.";
+            int key = 3;
+
+            string encrypted = CaesarCipher.Encrypt(secret, key);
+            string decrypted = CaesarCipher.Decrypt(encrypted, key);
+
+            Console.WriteLine($"Исходный текст: {secret}");
+            Console.WriteLine($"Зашифровано:    {encrypted}");
+            Console.WriteLine($"Расшифровано:   {decrypted}");
+
             Console.ReadKey();
         }
     }
