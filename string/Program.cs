@@ -12,6 +12,19 @@ namespace StringsPractice
             Console.WriteLine("=== ЗАДАНИЕ 1: АНАЛИЗАТОР ТЕКСТА ===");
             TextAnalyzer.Analyze(sampleText);
 
+            Console.WriteLine("\n=== ЗАДАНИЕ 2: ГЕНЕРАТОР ОТЧЁТА ===");
+            Sale[] sales = new Sale[]
+            {
+                new Sale("Клавиатура", 3, 2500.00m),
+                new Sale("Мышь беспроводная", 5, 1200.50m),
+                new Sale("Монитор 27\"", 2, 18900.00m)
+            };
+
+            var reportBuilder = new ReportBuilder();
+            string report = reportBuilder.BuildReport(sales);
+            Console.WriteLine(report);
+            reportBuilder.SaveToFile("sales_report.txt", report);
+
             Console.ReadKey();
         }
     }
